@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146250FA2C7B144700A7F663 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146250F92C7B144700A7F663 /* User.swift */; };
+		146250FB2C7B144700A7F663 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146250F92C7B144700A7F663 /* User.swift */; };
+		146250FE2C7B14ED00A7F663 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146250FD2C7B14ED00A7F663 /* APIService.swift */; };
+		146250FF2C7B14ED00A7F663 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146250FD2C7B14ED00A7F663 /* APIService.swift */; };
+		146251022C7B155000A7F663 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146251012C7B155000A7F663 /* UserListViewModel.swift */; };
+		146251032C7B155000A7F663 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146251012C7B155000A7F663 /* UserListViewModel.swift */; };
+		146251052C7B15A600A7F663 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146251042C7B15A600A7F663 /* UserListView.swift */; };
+		146251062C7B15A600A7F663 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146251042C7B15A600A7F663 /* UserListView.swift */; };
 		14F4A89E2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4A89D2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift */; };
 		14F4A8A02C7AFD7000A97D6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4A89F2C7AFD7000A97D6A /* ContentView.swift */; };
 		14F4A8A22C7AFD7300A97D6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F4A8A12C7AFD7300A97D6A /* Assets.xcassets */; };
@@ -40,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		090BF416F05AD0C82EAEA415 /* Pods-indobytesUserBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-indobytesUserBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-indobytesUserBrowserTests/Pods-indobytesUserBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
+		146250F92C7B144700A7F663 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		146250FD2C7B14ED00A7F663 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		146251012C7B155000A7F663 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		146251042C7B15A600A7F663 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		14F4A89A2C7AFD7000A97D6A /* indobytesUserBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = indobytesUserBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F4A89D2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = indobytesUserBrowserApp.swift; sourceTree = "<group>"; };
 		14F4A89F2C7AFD7000A97D6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +112,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		146250F82C7B142200A7F663 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				146250F92C7B144700A7F663 /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		146250FC2C7B14CC00A7F663 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				146250FD2C7B14ED00A7F663 /* APIService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		146251002C7B153700A7F663 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				146251012C7B155000A7F663 /* UserListViewModel.swift */,
+				146251042C7B15A600A7F663 /* UserListView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		14F4A8912C7AFD7000A97D6A = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +162,9 @@
 		14F4A89C2C7AFD7000A97D6A /* indobytesUserBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				146251002C7B153700A7F663 /* views */,
+				146250FC2C7B14CC00A7F663 /* services */,
+				146250F82C7B142200A7F663 /* models */,
 				14F4A89D2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift */,
 				14F4A89F2C7AFD7000A97D6A /* ContentView.swift */,
 				14F4A8A12C7AFD7300A97D6A /* Assets.xcassets */,
@@ -170,7 +210,6 @@
 				D144966561BF448FA3702449 /* Pods-indobytesUserBrowserTests.debug.xcconfig */,
 				090BF416F05AD0C82EAEA415 /* Pods-indobytesUserBrowserTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -378,7 +417,11 @@
 			files = (
 				14F4A8A72C7AFD7300A97D6A /* Persistence.swift in Sources */,
 				14F4A8A02C7AFD7000A97D6A /* ContentView.swift in Sources */,
+				146251022C7B155000A7F663 /* UserListViewModel.swift in Sources */,
+				146251052C7B15A600A7F663 /* UserListView.swift in Sources */,
 				14F4A89E2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift in Sources */,
+				146250FA2C7B144700A7F663 /* User.swift in Sources */,
+				146250FE2C7B14ED00A7F663 /* APIService.swift in Sources */,
 				14F4A8AA2C7AFD7300A97D6A /* indobytesUserBrowser.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +430,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146250FB2C7B144700A7F663 /* User.swift in Sources */,
+				146251062C7B15A600A7F663 /* UserListView.swift in Sources */,
+				146251032C7B155000A7F663 /* UserListViewModel.swift in Sources */,
+				146250FF2C7B14ED00A7F663 /* APIService.swift in Sources */,
 				14F4A8B42C7AFD7300A97D6A /* indobytesUserBrowserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
