@@ -2,7 +2,7 @@
 
 This project implements a user browser application for Indobytes, built using SwiftUI.
 
-![Screen recording](https://github.com/srajanapitupulu/indobytesUserBrowser/blob/master/user_browser.mov)
+[Watch Screen recording](https://youtube.com/shorts/Tp-_iOtDXis?si=PWd8_atLi09m6keD)
 
 
 ## Requirements
