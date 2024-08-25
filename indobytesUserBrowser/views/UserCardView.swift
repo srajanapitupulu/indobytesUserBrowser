@@ -16,18 +16,23 @@ struct UserCardView: View {
         HStack(alignment: .center, spacing: 20) {
             
             // Use KFImage from Kingfisher to load the image
-            KFImage(URL(string: "https://i.pravatar.cc/150?u=\(user.id)"))
-                .placeholder {
-                    Image(systemName: "person.crop.circle.fill")
-                        .frame(width: 40, height: 40)
-                }
-                .cancelOnDisappear(true) // Cancel the image loading if the view disappears
-                .resizable() // Make the image resizable
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                .shadow(radius: 3)
+            ZStack {
+                Circle()
+                    .frame(width: 40, height: 40)
+                    .shadow(color: Color(hex: "#F7D6B4"), radius: 0, x: 2, y: 3)
+                
+                KFImage(URL(string: "https://i.pravatar.cc/150?u=\(user.id)"))
+                    .placeholder {
+                        Image(systemName: "person.crop.circle.fill")
+                            .frame(width: 40, height: 40)
+                    }
+                    .cancelOnDisappear(true) // Cancel the image loading if the view disappears
+                    .resizable() // Make the image resizable
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.black, lineWidth: 1))
+            }
             
             VStack(alignment: .leading, spacing: 0) {
                 Text(user.name)
@@ -40,7 +45,7 @@ struct UserCardView: View {
         .padding(EdgeInsets(top: 15, leading: 20, bottom: 15, trailing: 20))
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.gray, lineWidth: 2)
+                .stroke(Color.black, lineWidth: 2)
         )
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.white)

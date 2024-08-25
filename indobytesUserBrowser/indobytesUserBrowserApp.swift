@@ -15,7 +15,7 @@ struct indobytesUserBrowserApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            UserListView(viewModel: UserListViewModel())
+            UserListView()
         }
     }
 }

@@ -7,25 +7,31 @@
 
 import SwiftUI
 
-let defaultBorderWidth: CGFloat = 0.5
+let defaultBorderWidth: CGFloat = 1
 
 struct UserListView: View {
-    @ObservedObject var viewModel: UserListViewModel
+    @StateObject private var viewModel = UserListViewModel()
     
     @State private var searchText: String = ""
+    @State private var searchQuery: String = ""
     @State private var selectedUser: User? = nil
     @State private var isDetailViewPresented = false
     
-    var filteredUserList: [User] {
-        if searchText.isEmpty {
-            return viewModel.users
-        }
-        else {
-            return viewModel.users.filter{ user in
-                user.name.lowercased().contains(searchText.lowercased()) ||
-                user.username.lowercased().contains(searchText.lowercased())
-            }
-        }
+//    private func filteredUserList() -> [User] {
+//        if searchText.isEmpty {
+//            return viewModel.users
+//        }
+//        else {
+//            return viewModel.users.filter{ user in
+//                user.name.lowercased().contains(searchText.lowercased()) ||
+//                user.username.lowercased().contains(searchText.lowercased())
+//            }
+//        }
+//    }
+    
+    private func performSearch() {
+        searchQuery = searchText
+        viewModel.filterUsers(by: searchQuery)
     }
     
     var body: some View {
@@ -69,13 +75,35 @@ struct UserListView: View {
                 
             } else {
                 VStack(alignment: .leading, spacing: 0) {
-                    TextField("Search users...", text: $searchText)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.gray, lineWidth: defaultBorderWidth)
-                        )
-                        .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                    HStack {
+                        TextField("Search users...", text: $searchText)
+                            .textFieldStyle(.roundedBorder)
+                            .background(Color.white)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.black, lineWidth: 2)
+                            )
+                            .cornerRadius(10)
+                            .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 10))
+                            .shadow(color: Color(hex: "#F7D6B4"), radius: 0, x: 2, y: 3)
+                            .controlSize(.large)
+                        
+                        Button(action: {
+                            performSearch()
+                        }) {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.black)
+                                .fontWeight(.light)
+                                .frame(width: 35, height: 35)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.black, lineWidth: 1))
+                                .shadow(color: Color(hex: "#F7D6B4"), radius: 0, x: 2, y: 3)
+                        }
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                    }
+                    
+                    Spacer()
                     
                     Text(searchText.isEmpty ? "ALL USERS" : "SEARCH RESULT")
                         .background(Color.white)
@@ -83,9 +111,11 @@ struct UserListView: View {
                         .fontWeight(.semibold)
                         .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .border(Color.gray, width: defaultBorderWidth)
+                        .border(Color.black, width: 0.5)
                     
-                    if filteredUserList.isEmpty {
+                    Spacer()
+                    
+                    if viewModel.filteredUsers.isEmpty {
                         VStack {
                             //exclamationmark.triangle
                             Image(systemName: "exclamationmark.triangle")
@@ -101,7 +131,7 @@ struct UserListView: View {
                         .foregroundColor(Color.gray.opacity(0.7))
                     }
                     else {
-                        List(filteredUserList) { user in
+                        List(viewModel.filteredUsers) { user in
                             UserCardView(user: user)
                                 .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 5, trailing: 0))
                                 .listRowSeparator(.hidden)

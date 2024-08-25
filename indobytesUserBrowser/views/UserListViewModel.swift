@@ -11,6 +11,7 @@ import Combine
 class UserListViewModel: ObservableObject {
     
     @Published var users: [User] = []
+    @Published var filteredUsers: [User] = []
     @Published var isLoading: Bool = false
     @Published var error: APIErrorState?
     
@@ -29,10 +30,22 @@ class UserListViewModel: ObservableObject {
                 switch result {
                 case .success(let users):
                     self?.users = users
+                    self?.filteredUsers = users
                     self?.error = nil // Clear any previous errors
                 case .failure(let apiError):
                     self?.handleError(apiError)
                 }
+            }
+        }
+    }
+    
+    func filterUsers(by query: String) {
+        if query.isEmpty {
+            filteredUsers = users
+        } else {
+            filteredUsers = users.filter{ user in
+                user.name.lowercased().contains(query.lowercased()) ||
+                user.username.lowercased().contains(query.lowercased())
             }
         }
     }
