@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1410EE6E2C7BCF3F00F78149 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410EE6D2C7BCF3F00F78149 /* ClearableTextField.swift */; };
+		1410EE6F2C7BCF4500F78149 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410EE6D2C7BCF3F00F78149 /* ClearableTextField.swift */; };
 		146250FA2C7B144700A7F663 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146250F92C7B144700A7F663 /* User.swift */; };
 		146250FB2C7B144700A7F663 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146250F92C7B144700A7F663 /* User.swift */; };
 		146250FE2C7B14ED00A7F663 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146250FD2C7B14ED00A7F663 /* APIService.swift */; };
@@ -52,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		090BF416F05AD0C82EAEA415 /* Pods-indobytesUserBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-indobytesUserBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-indobytesUserBrowserTests/Pods-indobytesUserBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
+		1410EE6D2C7BCF3F00F78149 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
 		146250F92C7B144700A7F663 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		146250FD2C7B14ED00A7F663 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		146251012C7B155000A7F663 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
@@ -117,6 +120,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1410EE6C2C7BCF1F00F78149 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				1410EE6D2C7BCF3F00F78149 /* ClearableTextField.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		146250F82C7B142200A7F663 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +180,7 @@
 		14F4A89C2C7AFD7000A97D6A /* indobytesUserBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				1410EE6C2C7BCF1F00F78149 /* components */,
 				146251002C7B153700A7F663 /* views */,
 				146250FC2C7B14CC00A7F663 /* services */,
 				146250F82C7B142200A7F663 /* models */,
@@ -461,6 +473,7 @@
 				14E182F52C7B56A800ABDEF4 /* UserCardView.swift in Sources */,
 				146251052C7B15A600A7F663 /* UserListView.swift in Sources */,
 				14F4A89E2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift in Sources */,
+				1410EE6E2C7BCF3F00F78149 /* ClearableTextField.swift in Sources */,
 				146250FA2C7B144700A7F663 /* User.swift in Sources */,
 				146250FE2C7B14ED00A7F663 /* APIService.swift in Sources */,
 				14E182F72C7B5AEF00ABDEF4 /* UserDetailView.swift in Sources */,
@@ -481,6 +494,7 @@
 				146250FF2C7B14ED00A7F663 /* APIService.swift in Sources */,
 				14F4A8B42C7AFD7300A97D6A /* indobytesUserBrowserTests.swift in Sources */,
 				14B2C5972C7BA74200AA1A8E /* UserCardView.swift in Sources */,
+				1410EE6F2C7BCF4500F78149 /* ClearableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

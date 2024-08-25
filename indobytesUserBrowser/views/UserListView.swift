@@ -17,6 +17,8 @@ struct UserListView: View {
     @State private var selectedUser: User? = nil
     @State private var isDetailViewPresented = false
     
+    @FocusState private var isSearchFieldFocused: Bool
+    
     private func performSearch() {
         searchQuery = searchText
         viewModel.filterUsers(by: searchQuery)
@@ -54,7 +56,8 @@ struct UserListView: View {
                         Text(error.localizedDescription)
                             .font(.subheadline)
                             .fontWeight(.medium)
-                            .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
                             .multilineTextAlignment(.center)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -64,19 +67,16 @@ struct UserListView: View {
             } else {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        TextField("Search users...", text: $searchText)
-                            .textFieldStyle(.roundedBorder)
-                            .background(Color.white)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.black, lineWidth: 2)
-                            )
-                            .cornerRadius(10)
-                            .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 10))
-                            .shadow(color: Color(hex: "#F7D6B4"), radius: 0, x: 2, y: 3)
-                            .controlSize(.large)
+                        ClearableTextField(text: $searchText)
+                            .focused($isSearchFieldFocused)
+                            .onChange(of: searchText) { newSearchValue in
+                                if newSearchValue.isEmpty {
+                                    performSearch()
+                                }
+                            }
                         
                         Button(action: {
+                            isSearchFieldFocused = false
                             performSearch()
                         }) {
                             Image(systemName: "magnifyingglass")
@@ -88,8 +88,8 @@ struct UserListView: View {
                                 .overlay(Circle().stroke(Color.black, lineWidth: 1))
                                 .shadow(color: Color(hex: "#F7D6B4"), radius: 0, x: 2, y: 3)
                         }
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
                     }
+                    .padding(.horizontal, 15)
                     
                     Spacer()
                     
@@ -97,7 +97,8 @@ struct UserListView: View {
                         .background(Color.white)
                         .font(.subheadline)
                         .fontWeight(.semibold)
-                        .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .border(Color.black, width: 0.5)
                     
@@ -112,7 +113,8 @@ struct UserListView: View {
                             Text("No users found")
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
-                                .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 10)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         .foregroundColor(Color.gray.opacity(0.7))
@@ -125,10 +127,11 @@ struct UserListView: View {
                                 .onTapGesture {
                                     self.selectedUser = user
                                     self.isDetailViewPresented = true
+                                    self.isSearchFieldFocused = false
                                 }
                         }
                         .listStyle(PlainListStyle())
-                        .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+                        .padding(.horizontal, 15)
                         .background(Color(hex: "#F9F5F2"))
                         .scrollIndicators(.hidden)
                     }
