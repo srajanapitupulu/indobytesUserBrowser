@@ -2,7 +2,7 @@
 //  User.swift
 //  indobytesUserBrowser
 //
-//  Created by bm yanti on 25/08/24.
+//  Created by Samuel Napitupulu on 25/08/24.
 //
 
 import Foundation
