@@ -16,7 +16,6 @@ class UserListViewModel: ObservableObject {
     @Published var error: APIErrorState?
     
     private let apiService: APIServiceProtocol
-    private var cancellables = Set<AnyCancellable>()
     
     init(apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
@@ -48,13 +47,6 @@ class UserListViewModel: ObservableObject {
                 user.username.lowercased().contains(query.lowercased())
             }
         }
-    }
-    
-    func retryFetchingUsers() {
-        // Clear the previous error
-        self.error = nil
-        // Retry fetching users
-        fetchUsers()
     }
     
     private func handleError(_ error: APIErrorState) {

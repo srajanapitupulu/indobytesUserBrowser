@@ -17,18 +17,6 @@ struct UserListView: View {
     @State private var selectedUser: User? = nil
     @State private var isDetailViewPresented = false
     
-//    private func filteredUserList() -> [User] {
-//        if searchText.isEmpty {
-//            return viewModel.users
-//        }
-//        else {
-//            return viewModel.users.filter{ user in
-//                user.name.lowercased().contains(searchText.lowercased()) ||
-//                user.username.lowercased().contains(searchText.lowercased())
-//            }
-//        }
-//    }
-    
     private func performSearch() {
         searchQuery = searchText
         viewModel.filterUsers(by: searchQuery)
@@ -117,7 +105,6 @@ struct UserListView: View {
                     
                     if viewModel.filteredUsers.isEmpty {
                         VStack {
-                            //exclamationmark.triangle
                             Image(systemName: "exclamationmark.triangle")
                                 .resizable()
                                 .scaledToFit()
