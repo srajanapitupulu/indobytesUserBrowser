@@ -13,6 +13,8 @@ struct UserListView: View {
     @ObservedObject var viewModel: UserListViewModel
     
     @State private var searchText: String = ""
+    @State private var selectedUser: User? = nil
+    @State private var isDetailViewPresented = false
     
     var filteredUserList: [User] {
         if searchText.isEmpty {
@@ -103,6 +105,10 @@ struct UserListView: View {
                             UserCardView(user: user)
                                 .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 5, trailing: 0))
                                 .listRowSeparator(.hidden)
+                                .onTapGesture {
+                                    self.selectedUser = user
+                                    self.isDetailViewPresented = true
+                                }
                         }
                         .listStyle(PlainListStyle())
                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
@@ -112,6 +118,9 @@ struct UserListView: View {
                 }
                 .background(Color(hex: "#F9F5F2"))
                 .navigationTitle("Users")
+                .sheet(item: self.$selectedUser) { user in
+                    UserDetailView(user: user)
+                }
             }
         }
         .onAppear {

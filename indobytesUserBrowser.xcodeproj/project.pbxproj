@@ -16,6 +16,7 @@
 		146251052C7B15A600A7F663 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146251042C7B15A600A7F663 /* UserListView.swift */; };
 		146251062C7B15A600A7F663 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146251042C7B15A600A7F663 /* UserListView.swift */; };
 		14E182F52C7B56A800ABDEF4 /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E182F42C7B56A800ABDEF4 /* UserCardView.swift */; };
+		14E182F72C7B5AEF00ABDEF4 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E182F62C7B5AEF00ABDEF4 /* UserDetailView.swift */; };
 		14F4A89E2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4A89D2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift */; };
 		14F4A8A02C7AFD7000A97D6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4A89F2C7AFD7000A97D6A /* ContentView.swift */; };
 		14F4A8A22C7AFD7300A97D6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F4A8A12C7AFD7300A97D6A /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		146251012C7B155000A7F663 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		146251042C7B15A600A7F663 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		14E182F42C7B56A800ABDEF4 /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
+		14E182F62C7B5AEF00ABDEF4 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		14F4A89A2C7AFD7000A97D6A /* indobytesUserBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = indobytesUserBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F4A89D2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = indobytesUserBrowserApp.swift; sourceTree = "<group>"; };
 		14F4A89F2C7AFD7000A97D6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				146251012C7B155000A7F663 /* UserListViewModel.swift */,
 				146251042C7B15A600A7F663 /* UserListView.swift */,
 				14E182F42C7B56A800ABDEF4 /* UserCardView.swift */,
+				14E182F62C7B5AEF00ABDEF4 /* UserDetailView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				14F4A89E2C7AFD7000A97D6A /* indobytesUserBrowserApp.swift in Sources */,
 				146250FA2C7B144700A7F663 /* User.swift in Sources */,
 				146250FE2C7B14ED00A7F663 /* APIService.swift in Sources */,
+				14E182F72C7B5AEF00ABDEF4 /* UserDetailView.swift in Sources */,
 				14F4A8AA2C7AFD7300A97D6A /* indobytesUserBrowser.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

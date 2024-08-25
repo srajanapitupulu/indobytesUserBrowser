@@ -14,20 +14,6 @@ struct UserCardView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-//            AsyncImage(url: URL(string: "https://i.pravatar.cc/150")) { image in
-//                image
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
-//            } placeholder: {
-//                Image(systemName: "person.crop.circle.fill")
-//                    .frame(width: 40, height: 40)
-//            }
-//            .frame(width: 40, height: 40)
-//            .overlay(
-//                Circle()
-//                    .stroke(Color.yellow, lineWidth: 1)
-//            )
-//            .clipShape(Circle())
             
             // Use KFImage from Kingfisher to load the image
             KFImage(URL(string: "https://i.pravatar.cc/150?u=\(user.id)"))
