@@ -112,10 +112,10 @@ struct UserListView: View {
                 }
                 .background(Color(hex: "#F9F5F2"))
                 .navigationTitle("Users")
-                .onAppear {
-                    viewModel.fetchUsers()
-                }
             }
+        }
+        .onAppear {
+            viewModel.fetchUsers()
         }
     }
 }
