@@ -1,6 +1,6 @@
-# indobytesUserBrowser
+# SwiftUI - User Browser
 
-This project implements a user browser application for Indobytes, built using SwiftUI.
+This project implements a user browser built using SwiftUI.
 
 [Watch Screen recording](https://youtube.com/shorts/Tp-_iOtDXis?si=PWd8_atLi09m6keD)
 
